@@ -1,0 +1,104 @@
+<div>
+  <div>
+      <div>
+            <p style="color:rgb(17, 45, 227);font-weight: bold;font-size: xx-large;">ברוכים הבאים {{title}}</p>
+            <p style="color:rgb(17, 45, 227);font-weight: bold;">{{Arik}}</p>
+      </div>
+    </div>
+
+    <!-- <div class="firstDiv" style="padding-right: 1cm;"> -->
+      <div style="padding-right: 1cm;">
+        <div>
+            <p style="color:rgb(19, 113, 71);font-weight: bold;">סימבול:  {{Currentsymbol}}</p>
+            <p style="color:rgb(19, 113, 71);font-weight: bold;">מחיר סגירה:  {{Current_Stock_Price}}</p>
+            <p style="color:rgb(19, 113, 71);font-weight: bold;">תאריך מסחר אחרון:  {{Latesttrade}}</p>
+
+          <!-- <h3 style="color:rgb(104, 61, 224);font-weight: bold;">
+            </h3> -->
+            <mat-form-field appearance="fill">
+              <mat-label>בחר מניה</mat-label>
+              <mat-select [(ngModel)]="selected" (selectionChange)="GetCurrentValue()">
+                <!-- <mat-select matNativeControl [(ngModel)]="selected" (change)="GetCurrentValue()"> -->
+                <mat-option *ngFor="let option of SelectOps" [value]="option.id">
+                  {{ option.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!-- {{selected}} -->
+          </div>
+
+          <!-- <div>
+            <button type="button" class="btn btn-primary" (click)="GetCurrentValue()">הצג פרטי מניה</button>
+          </div>
+          <p></p> -->
+          <div>
+            <button type="button" class="btn btn-primary" (click)="GetAllYValues()">הצג טבלת נתוני מניה</button>
+          </div>
+          <div>
+            <div class="chart-container" style="position: relative; height:80vh; width:135vw">
+              <!-- <canvas  id="MyChart" >{{ chart }}</canvas> -->
+              <canvas id="MyChart" >{{ chart }}</canvas>
+          </div>
+    
+      </div>
+
+      
+      <!-- <div>
+
+        <mat-table class="lessons-table mat-elevation-z8" [dataSource]="DBar">
+      
+          <ng-container matColumnDef="seqNo">
+              <div *matHeaderCellDef>#</div>
+              <div *matCellDef="let open">{{lesson.open}}</div>
+          </ng-container>
+        
+          <ng-container matColumnDef="close">
+              <div *matHeaderCellDef>Description</div>
+              <div class="close stocks"
+                        *matCellDef="let lesson">{{lesson.close}}</div>
+          </ng-container>
+        
+          <ng-container matColumnDef="duration">
+              <div *matHeaderCellDef>Duration</div>
+              <div class="duration-cell"
+                        *matCellDef="let lesson">{{lesson.duration}}</div>
+          </ng-container>
+          
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+          
+      </mat-table>
+
+      </div> -->
+    <!-- <div class="secondDiv">
+        <app-line-chart></app-line-chart>
+      </div>
+        <div *ngIf="DBar">
+          <ul>
+            <li *ngFor="let rw of DBar">
+              <p>סימול מניה: {{rw['01. symbol']}}</p>
+              <p>מחיר פתיחה: {{rw['02. open']}}  </p>
+              <p>מחיר גבוה: {{rw['03. high']}}  </p>
+              <p>מחיר נמוך: {{rw['04. low']}}  </p>
+              <p>מחיר מניה: {{rw['05. price']}}  </p>
+              <p>עצימות: {{rw['06. volume']}}  </p>
+              <p>מחיר סגירה קודם: {{rw['08. previous close']}}  </p>
+              <p>שינוי: {{rw['09. change']}}  </p>
+              <p>שינוי באחוזים: {{rw['10. change percent']}}  </p> -->
+              <!-- <span>תאריך: {{rw.date.toLocaleDateString()}}</span>
+              <span>תאריך: {{rw.date}}</span>
+              <p>מחיר פתיחה: {{rw['02. open']}}  </p>
+              <p>מחיר גבוה: {{rw['03. high']}}  </p>
+              <p>מחיר נמוך: {{rw['04. low']}}  </p>
+              <span>מחיר מניה: {{rw.close}}  </span>
+              <p>עצימות: {{rw['06. volume']}}  </p>
+              <p>מחיר סגירה קודם: {{rw['08. previous close']}}  </p>
+              <p>שינוי: {{rw['09. change']}}  </p>
+              <p>שינוי באחוזים: {{rw['10. change percent']}}  </p>
+            </li>
+          </ul>
+        </div>
+    </div> -->
+
+</div>

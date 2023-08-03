@@ -1,0 +1,38 @@
+.captions {
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    width: 400px;
+    padding: 5px;
+    transform: translate(-50%, -50%);
+    background: rgba(216, 209, 209, 0.965);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+.firstDiv {
+  /* width: 355px;
+  height:425px; */
+  /* background-color: rgb(169, 172, 171); */
+  float : right;
+  /* padding-right: 10px; */
+}
+.secondDiv {
+  width: 920px;
+  height:500px;
+  background-color: rgb(233, 182, 182);
+  float : left;
+  /* font-size: larger;
+  color:white; */
+  /* padding-left: 10px; */
+
+}
+p {
+  font-family: Lato;
+}
+
+.canvas {
+  display: block;
+  margin: 20px auto;
+  max-width: 600px;
+}

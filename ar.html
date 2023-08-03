@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Page Data Grabber</title>
+</head>
+<body>
+    <div id="data-container">
+        <!-- The data you want to grab will be displayed here -->
+    </div>
+
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            // Function to fetch data from a web page
+            function fetchData(url) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        // Create a temporary container to store the retrieved data
+                        const tempContainer = document.createElement("div");
+                        tempContainer.innerHTML = data;
+                        console.log('con', tempContainer.innerHTML);
+                        // Extract the data you want using DOM manipulation methods
+                        const targetData = tempContainer.querySelector(".target-element").textContent;
+
+                        // Display or process the extracted data as required
+                        document.getElementById("data-container").textContent = targetData;
+                    })
+                    .catch(error => {
+                        console.error("Error fetching data:", error);
+                    });
+            }
+
+            // Call the function to fetch data from a specific URL
+            const targetUrl = "https://www.google.com/search?q=%D7%9E%D7%A0%D7%99%D7%99%D7%AA+SQ&sxsrf=AB5stBiypAANEHZKhq_PUp8dDkzdj9loZg%3A1689839531599&ei=q-e4ZOKhJK-SkdUPwviZmAM&ved=0ahUKEwiio4jo5pyAAxUvSaQEHUJ8BjMQ4dUDCBA&uact=5&oq=%D7%9E%D7%A0%D7%99%D7%99%D7%AA+SQ&gs_lp=Egxnd3Mtd2l6LXNlcnAiDdee16DXmdeZ16ogU1EyBxAAGBMYgAQyBxAAGBMYgAQyBxAAGBMYgARI1SZQsBNYuBlwAngBkAEAmAGtAaABtwKqAQMwLjK4AQPIAQD4AQHCAgoQABhHGNYEGLAD4gMEGAAgQYgGAZAGCA&sclient=gws-wiz-serp"; // Replace this with the URL of the web page you want to scrape
+            fetchData(targetUrl);
+        });
+    </script>
+</body>
+</html>
